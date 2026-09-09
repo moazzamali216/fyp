@@ -26,7 +26,7 @@ function BlogCreate({ onSuccess }) {
 
     fetch(`${API_URL}/blogs?${params}`, {
       method: 'POST',
-      headers: { 'role': 'admin' }
+      headers: {'ngrok-skip-browser-warning': 'true', 'role': 'admin' }
     })
     .then(res => res.json())
     .then(data => {

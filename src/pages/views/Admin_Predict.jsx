@@ -26,7 +26,7 @@ function Admin_Predict({ user }) {
 
   const fetchUsers = () => {
     fetch(`${API_URL}/users`, {
-      headers: { 'role': 'admin' }
+      headers: {'ngrok-skip-browser-warning': 'true', 'role': 'admin' }
     })
     .then(res => res.json())
     .then(data => {
@@ -77,7 +77,7 @@ function Admin_Predict({ user }) {
 
     fetch(`${API_URL}/admin/predict?${params}`, {
       method: 'POST',
-      headers: { 'role': 'admin' }
+      headers: {'ngrok-skip-browser-warning': 'true', 'role': 'admin' }
     })
     .then(res => res.json())
     .then(data => {

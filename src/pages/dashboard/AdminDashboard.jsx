@@ -39,7 +39,7 @@ function AdminDashboard() {
 
     fetch(`${API_URL}/blogs/${blogId}`, {
       method: 'DELETE',
-      headers: { 'role': 'admin' }
+      headers: {'ngrok-skip-browser-warning': 'true', 'role': 'admin' }
     })
       .then(res => res.json())
       .then(data => {

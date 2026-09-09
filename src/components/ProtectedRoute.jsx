@@ -27,7 +27,7 @@ function ProtectedRoute({ allowedRoles }) {
         console.log('🔍 Calling /api/verify...')
         const response = await fetch(`${API_URL}/api/verify`, {
           method: 'GET',
-          headers: {
+          headers: {'ngrok-skip-browser-warning': 'true',
             'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json'
           }

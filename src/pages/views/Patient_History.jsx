@@ -12,7 +12,7 @@ function Patient_History({ user }) {
   const fetchPredictions = () => {
     const role = user?.role || 'patient'
     fetch(`${API_URL}/predictions?user_id=${user.id}`, {
-      headers: { 'role': role }
+      headers: {'ngrok-skip-browser-warning': 'true', 'role': role }
     })
     .then(res => res.json())
     .then(data => {
