@@ -4,6 +4,8 @@ import Data_Table from "./views/Data_Table"
 import Data_Process from "./views/Data_Process"
 import Data_Visualization from './views/Data_Visualization'
 import Data_Prepare from './views/Data_Prepare'
+import Data_Split from './views/Data_Split'
+import Data_Train from './views/Data_Train'
 
 
 function Data_Dashboard() {
@@ -63,7 +65,19 @@ function Data_Dashboard() {
                         className={`sidebar-btn ${activeTab === 'pre' ? 'active' : ''}`}
                         onClick={() => setActiveTab('pre')}
                     >
-                        <span className="icon">♾</span> Data Prepare to feed model
+                        <span className="icon">♾</span> Statisical Analysis
+                    </button>
+                                        <button
+                        className={`sidebar-btn ${activeTab === 'spl' ? 'active' : ''}`}
+                        onClick={() => setActiveTab('spl')}
+                    >
+                        <span className="icon">䷖</span> Data Split
+                    </button>
+                               <button
+                        className={`sidebar-btn ${activeTab === 'mdt' ? 'active' : ''}`}
+                        onClick={() => setActiveTab('mdt')}
+                    >
+                        <span className="icon">©</span> Model Train
                     </button>
                     <button
                         className={'sidebar-btn '} onClick={() => navigate('/admin-dashboard', { replace: "True" })}
@@ -81,9 +95,8 @@ function Data_Dashboard() {
                     {activeTab === "preprocess-data" && <Data_Process />}
                     {activeTab === "eda" && <Data_Visualization />}
                     {activeTab === "pre" && <Data_Prepare />}
-
-
-
+                    {activeTab === "spl" && <Data_Split />}
+                    {activeTab === "mdt" && <Data_Train />}
                 </main>
             </div>
         </div>

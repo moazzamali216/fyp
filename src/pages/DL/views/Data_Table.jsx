@@ -30,7 +30,7 @@ function Data_Table() {
     setError('')
     
     fetch(`${API_URL}/admin/dl-table`, {
-      headers: {'ngrok-skip-browser-warning': 'true', 'role': currentUser?.role || 'admin' }
+      headers: { 'role': currentUser?.role || 'admin' }
     })
     .then(res => res.json())
     .then(data => {
@@ -51,7 +51,7 @@ function Data_Table() {
   const handleExportCSV = () => {
     setExportLoading(true)
     fetch(`${API_URL}/admin/dl-table/export`, {
-      headers: {'ngrok-skip-browser-warning': 'true', 'role': currentUser?.role || 'admin' }
+      headers: { 'role': currentUser?.role || 'admin' }
     })
     .then(res => {
       if (!res.ok) throw new Error('Export failed')
@@ -145,12 +145,6 @@ function Data_Table() {
       }
     }
     
-    if (rows.length > 1000) {
-      return {
-        valid: false,
-        error: `Too many rows: ${rows.length}. Maximum allowed is 1000.`
-      }
-    }
     
     return {
       valid: true,
@@ -193,7 +187,7 @@ function Data_Table() {
       
       fetch(`${API_URL}/admin/dl-table/import`, {
         method: 'POST',
-        headers: {'ngrok-skip-browser-warning': 'true', 'role': currentUser?.role || 'admin' },
+        headers: { 'role': currentUser?.role || 'admin' },
         body: formData
       })
       .then(res => res.json())

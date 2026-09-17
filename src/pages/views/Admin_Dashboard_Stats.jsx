@@ -14,7 +14,7 @@ function Admin_Dashboard_Stats({ user }) {
   const fetchStats = () => {
     setLoading(true)
     fetch(`${API_URL}/admin/dashboard-stats`, {
-      headers: {'ngrok-skip-browser-warning': 'true', 'role': 'admin' }
+      headers: { 'role': 'admin' }
     })
     .then(res => res.json())
     .then(data => {

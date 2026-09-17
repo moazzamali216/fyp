@@ -11,11 +11,7 @@ function BlogList({ isAdmin = false, onEdit, onDelete }) {
 
   const fetchBlogs = () => {
     setLoading(true)
-    fetch(`${API_URL}/blogs`,{
-      headers: {
-      'ngrok-skip-browser-warning': 'true'
-      }
-    })
+    fetch(`${API_URL}/blogs`)
       .then(res => res.json())
       .then(data => {
         if (data.blogs) setBlogs(data.blogs)

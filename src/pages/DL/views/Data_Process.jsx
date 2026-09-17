@@ -21,7 +21,7 @@ function Data_Process() {
     setError('')
     
     fetch(`${API_URL}/admin/dl-table`, {
-      headers: {'ngrok-skip-browser-warning': 'true', 'role': currentUser?.role || 'admin' }
+      headers: { 'role': currentUser?.role || 'admin' }
     })
     .then(res => res.json())
     .then(data => {
@@ -55,7 +55,7 @@ function Data_Process() {
 
     fetch(`${API_URL}/admin/dl-table/clean`, {
       method: 'POST',
-      headers: {'ngrok-skip-browser-warning': 'true', 
+      headers: { 
         'role': currentUser?.role || 'admin',
         'Content-Type': 'application/json'
       }
@@ -76,7 +76,7 @@ function Data_Process() {
         setLoading(true)
         
         fetch(`${API_URL}/admin/dl-table`, {
-          headers: {'ngrok-skip-browser-warning': 'true', 'role': currentUser?.role || 'admin' }
+          headers: { 'role': currentUser?.role || 'admin' }
         })
         .then(res => res.json())
         .then(freshData => {
@@ -205,17 +205,16 @@ function Data_Process() {
 
     const numericColumns = ['preg', 'plas', 'pres', 'skin', 'test', 'mass', 'pedi', 'age']
     
-    const customBounds = {
-      'preg': { min: 0, max: 17 },
-      'plas': { min: 70, max: 200 },
-      'pres': { min: 40, max: 120 },
-      'skin': { min: 0, max: 50 },
-      'test': { min: 0, max: 500 },
-      'mass': { min: 15, max: 60 },
-      'pedi': { min: 0, max: 1.0 },
-      'age': { min: 21, max: 80 }
-    }
-    
+  const  customBounds = {
+    'preg': {'min': 0,   'max': 20},
+    'plas': {'min': 20,  'max': 300},
+    'pres': {'min': 20,  'max': 200},
+    'skin': {'min': 0,   'max': 100},
+    'test': {'min': 0,   'max': 900},
+    'mass': {'min': 10,  'max': 100},
+    'pedi': {'min': 0,   'max': 3.0},
+    'age':  {'min': 18,  'max': 100},
+}
     numericColumns.forEach(col => {
       if (columns.includes(col) && customBounds[col]) {
         const { min, max } = customBounds[col]

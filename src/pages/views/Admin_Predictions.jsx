@@ -16,7 +16,7 @@ function Admin_Predictions({ user }) {
 
   const fetchPredictions = () => {
     fetch(`${API_URL}/predictions`, {
-      headers: {'ngrok-skip-browser-warning': 'true', 'role': 'admin' }
+      headers: { 'role': 'admin' }
     })
     .then(res => res.json())
     .then(data => {
@@ -27,7 +27,7 @@ function Admin_Predictions({ user }) {
   const handleExportCSV = () => {
     setExportLoading(true)
     fetch(`${API_URL}/predictions/export`, {
-      headers: {'ngrok-skip-browser-warning': 'true', 'role': 'admin' }
+      headers: { 'role': 'admin' }
     })
     .then(res => {
       if (!res.ok) throw new Error('Export failed')

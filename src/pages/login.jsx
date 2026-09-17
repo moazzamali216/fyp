@@ -29,7 +29,7 @@ function Login() {
 
     fetch(`${API_URL}/login`, {
       method: 'POST',
-      headers: {'ngrok-skip-browser-warning': 'true',
+      headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
