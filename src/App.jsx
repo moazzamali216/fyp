@@ -11,7 +11,7 @@ import Navbar from './components/Navbar'
 import './App.css'
 
 
-// Layout component that includes Navbar
+// Layout component pk that includes Navbar
 const Layout = () => {
   return (
     <>
