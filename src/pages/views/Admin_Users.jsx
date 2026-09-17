@@ -20,7 +20,7 @@ function Admin_Users({ user }) {
 
   const fetchUsers = () => {
     fetch(`${API_URL}/users`, {
-      headers: { 'role': 'admin' }
+      headers: {"ngrok-skip-browser-warning": "true", 'role': 'admin' }
     })
     .then(res => res.json())
     .then(data => {
@@ -30,7 +30,7 @@ function Admin_Users({ user }) {
 
   const fetchDoctors = () => {
     fetch(`${API_URL}/users/doctors`, {
-      headers: { 'role': 'admin' }
+      headers: {"ngrok-skip-browser-warning": "true", 'role': 'admin' }
     })
     .then(res => res.json())
     .then(data => {
@@ -46,7 +46,7 @@ function Admin_Users({ user }) {
     setDeleteLoading(true)
     fetch(`${API_URL}/users/${userId}`, {
       method: 'DELETE',
-      headers: { 'role': 'admin' }
+      headers: {"ngrok-skip-browser-warning": "true", 'role': 'admin' }
     })
     .then(res => res.json())
     .then(data => {
@@ -79,7 +79,7 @@ function Admin_Users({ user }) {
     setAssignLoading(true)
     fetch(`${API_URL}/admin/assign-patient?patient_id=${patientId}&doctor_id=${doctorId}`, {
       method: 'POST',
-      headers: { 'role': 'admin' }
+      headers: {"ngrok-skip-browser-warning": "true", 'role': 'admin' }
     })
     .then(res => res.json())
     .then(data => {
@@ -106,7 +106,7 @@ function Admin_Users({ user }) {
     setAssignLoading(true)
     fetch(`${API_URL}/admin/unassign-patient?patient_id=${patientId}`, {
       method: 'POST',
-      headers: { 'role': 'admin' }
+      headers: {"ngrok-skip-browser-warning": "true", 'role': 'admin' }
     })
     .then(res => res.json())
     .then(data => {

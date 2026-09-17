@@ -19,7 +19,7 @@ function Data_Split() {
 
     try {
       const response = await fetch(`${API_URL}/admin/model-data/split`, {
-        headers: { 'role': currentUser?.role || 'admin' }
+        headers: {"ngrok-skip-browser-warning": "true", 'role': currentUser?.role || 'admin' }
       })
       const result = await response.json()
 
@@ -48,7 +48,7 @@ function Data_Split() {
     try {
       const response = await fetch(`${API_URL}/admin/model-data/split`, {
         method: 'POST',
-        headers: { 'role': currentUser?.role || 'admin' }
+        headers: {"ngrok-skip-browser-warning": "true", 'role': currentUser?.role || 'admin' }
       })
       const result = await response.json()
 

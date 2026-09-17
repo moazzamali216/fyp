@@ -7,7 +7,7 @@ const API_BASE_URL = 'http://127.0.0.1:8000/'
 const axiosInstance = axios.create({
   baseURL: API_BASE_URL,
   timeout: 10000,
-  headers: {
+  headers: {"ngrok-skip-browser-warning": "true",
     'Content-Type': 'application/json',
   },
 });

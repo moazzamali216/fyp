@@ -26,7 +26,7 @@ function Doctor_Prediction({ user }) {
 
   const fetchPatients = () => {
     fetch(`${API_URL}/doctor/patients?doctor_id=${user.id}`, {
-      headers: { 'role': 'doctor' }
+      headers: {"ngrok-skip-browser-warning": "true", 'role': 'doctor' }
     })
     .then(res => res.json())
     .then(data => {
@@ -87,7 +87,7 @@ function Doctor_Prediction({ user }) {
 
     fetch(`${API_URL}/doctor/predict?${params}`, {
       method: 'POST',
-      headers: { 'role': 'doctor' }
+      headers: {"ngrok-skip-browser-warning": "true", 'role': 'doctor' }
     })
     .then(res => res.json())
     .then(data => {

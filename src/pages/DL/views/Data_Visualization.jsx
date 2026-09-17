@@ -62,7 +62,7 @@ function Data_Visualization() {
     setError('')
     
     fetch(`${API_URL}/admin/dl-table`, {
-      headers: { 'role': currentUser?.role || 'admin' }
+      headers: {"ngrok-skip-browser-warning": "true", 'role': currentUser?.role || 'admin' }
     })
     .then(res => res.json())
     .then(data => {

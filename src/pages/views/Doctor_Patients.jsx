@@ -33,7 +33,7 @@ function Doctor_Patients({ user }) {
   const fetchPatients = () => {
     setLoading(true)
     fetch(`${API_URL}/doctor/patients?doctor_id=${user.id}`, {
-      headers: { 'role': 'doctor' }
+      headers: {"ngrok-skip-browser-warning": "true", 'role': 'doctor' }
     })
     .then(res => res.json())
     .then(data => {
@@ -51,7 +51,7 @@ function Doctor_Patients({ user }) {
     setShowPredictions(true)
     
     fetch(`${API_URL}/doctor/patient/${patient.id}/predictions?doctor_id=${user.id}`, {
-      headers: { 'role': 'doctor' }
+      headers: {"ngrok-skip-browser-warning": "true", 'role': 'doctor' }
     })
     .then(res => res.json())
     .then(data => {

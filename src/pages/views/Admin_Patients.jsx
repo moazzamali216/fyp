@@ -8,7 +8,7 @@ function Admin_Patients({ user }) {
 
   useEffect(() => {
     fetch(`${API_URL}/users/patients`, {
-      headers: { 'role': 'doctor' }
+      headers: {"ngrok-skip-browser-warning": "true", 'role': 'doctor' }
     })
     .then(res => res.json())
     .then(data => {

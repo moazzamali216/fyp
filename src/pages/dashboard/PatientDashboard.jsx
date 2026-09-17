@@ -25,7 +25,7 @@ function PatientDashboard() {
       
       // Check patient type
       fetch(`${API_URL}/${parsedUser.id}`, {
-        headers: { 'role': parsedUser.role }
+        headers: {"ngrok-skip-browser-warning": "true", 'role': parsedUser.role }
       })
       .then(res => res.json())
       .then(data => {
