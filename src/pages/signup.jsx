@@ -12,7 +12,7 @@ function Signup() {
   const [message, setMessage] = useState("")
   const [isLoading, setIsLoading] = useState(false)
 
-  // OTP flow state
+
   const [otpSent, setOtpSent] = useState(false)
   const [otp, setOtp] = useState("")
   const [isSendingOtp, setIsSendingOtp] = useState(false)
