@@ -22,7 +22,7 @@ function Data_Prepare() {
         setLoading(true)
         try {
             const response = await fetch(`${API_URL}/admin/model-data`, {
-                headers: {"ngrok-skip-browser-warning": "true", 'role': currentUser?.role || 'admin' }
+                headers: { 'role': currentUser?.role || 'admin' }
             })
             const result = await response.json()
 
@@ -61,7 +61,7 @@ function Data_Prepare() {
         try {
             const res = await fetch(`${API_URL}/admin/dl-table/preprocess`, {
                 method: 'POST',
-                headers: {"ngrok-skip-browser-warning": "true", 'role': currentUser?.role || 'admin' }
+                headers: { 'role': currentUser?.role || 'admin' }
             })
             const result = await res.json()
 

@@ -20,7 +20,7 @@ function Data_Train() {
     try {
       const response = await fetch(`${API_URL}/admin/model-data/train-test`, {
         method: 'POST',
-        headers: {"ngrok-skip-browser-warning": "true", 'role': currentUser?.role || 'admin' }
+        headers: { 'role': currentUser?.role || 'admin' }
       })
       const result = await response.json()
 
@@ -63,7 +63,7 @@ const saveModel = async () => {
       `${API_URL}/admin/model-data/save-model?${params}`,
       {
         method: 'POST',
-        headers: {"ngrok-skip-browser-warning": "true",
+        headers: {
           'role': currentUser?.role || 'admin'
         }
       }

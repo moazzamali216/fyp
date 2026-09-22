@@ -21,7 +21,7 @@ function Data_Process() {
     setError('')
     
     fetch(`${API_URL}/admin/dl-table`, {
-      headers: {"ngrok-skip-browser-warning": "true", 'role': currentUser?.role || 'admin' }
+      headers: { 'role': currentUser?.role || 'admin' }
     })
     .then(res => res.json())
     .then(data => {
@@ -55,7 +55,7 @@ function Data_Process() {
 
     fetch(`${API_URL}/admin/dl-table/clean`, {
       method: 'POST',
-      headers: {"ngrok-skip-browser-warning": "true", 
+      headers: { 
         'role': currentUser?.role || 'admin',
         'Content-Type': 'application/json'
       }
@@ -76,7 +76,7 @@ function Data_Process() {
         setLoading(true)
         
         fetch(`${API_URL}/admin/dl-table`, {
-          headers: {"ngrok-skip-browser-warning": "true", 'role': currentUser?.role || 'admin' }
+          headers: { 'role': currentUser?.role || 'admin' }
         })
         .then(res => res.json())
         .then(freshData => {

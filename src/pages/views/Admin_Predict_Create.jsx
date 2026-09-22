@@ -82,7 +82,7 @@ function Admin_Predict_Create({ user }) {
 
     fetch(`${API_URL}/admin/create-patient?${createParams}`, {
       method: 'POST',
-      headers: {"ngrok-skip-browser-warning": "true", 'role': 'admin' }
+      headers: { 'role': 'admin' }
     })
     .then(res => res.json())
     .then(data => {
